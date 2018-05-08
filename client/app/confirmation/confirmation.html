@@ -1,0 +1,19 @@
+<br><br>
+<div class="container ">
+    <div  ng-show="confirmationCtrl.seats!=''"  style="color: white;">
+        
+        <div class="summary">
+                <h1>Your booking is confirmed!</h1>
+        </div><br>
+
+        <div class="summary">
+        <span  class="title">{{confirmationCtrl.MovieName}}</span><br>
+        <span class="sub">{{confirmationCtrl.SelectedTheatre}}</span>
+        <span class="sub">{{confirmationCtrl.City}}</span><br>
+        <span class="sub">{{confirmationCtrl.SelectedTime}}</span><br><br>
+        <span class="sub">SEAT INFO</span> <br>
+        <span>{{confirmationCtrl.SelectedSeat}}</span>
+        <h3>TOTAL(INR) &nbsp;<b><span>{{confirmationCtrl.TotalPrice}}</span></b></h3>
+        </div>
+</div>
+</div>

@@ -1,0 +1,28 @@
+<div style="background-color: black; color:white">
+
+<div ng-repeat="m in moviesessionsCtrl.MovieData"> 
+    <div class="bg" style="background-image: url('http://image.tmdb.org/t/p/w500{{m.Poster}}');">
+        <div class="bottomleft">
+        <span><h1>{{m.Title}}</h1></span>
+        <span>{{m.Duration}} min</span>
+        </div>
+    </div>
+    <div class="container">
+        <br>
+        <div ng-repeat="m in moviesessionsCtrl.MappedMovie">
+                <button class="btn btn-large dates" ng-repeat="d in m.Dates">{{d}} </button><br><br><br>
+                <span class="TheatreName" ng-repeat="c in m.Theatres">{{c}} <br>
+                <button class="showTimings" ng-repeat="d in m.Timings" ng-click="moviesessionsCtrl.GotoSeatLayout(c,d)" onclick="location.href='/booking';">{{d}}</button>
+                <br><br>
+                </span>
+                <br>
+               
+ 
+        </div>
+        
+    </div>
+
+   
+
+</div>
+</div>

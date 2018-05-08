@@ -1,0 +1,77 @@
+<div class="container" style="color:white;"> 
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Search</h2>
+                <div class="form-group">
+                    <input type="text" placeholder="Movie Name" ng-model="addmovieCtrl.MovieName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Year" ng-model="addmovieCtrl.Year" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success" ng-click="addmovieCtrl.SearchMovie()">Search Movie</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table" ng-show="addmovieCtrl.MovieData!=''">
+                    <tr>
+                        <th>Poster</th>
+                        <th>Movie Name</th>
+                        <th>Synopsis</th>
+                        <th>Language</th>
+                        <th>Genre</th>
+                        <th>Companies</th>
+                        <th>Duration</th>
+                    </tr>
+                    <tr>
+                        <td><img src="http://image.tmdb.org/t/p/w500{{addmovieCtrl.MovieData.poster_path}}" width="130" height="200"></td>
+                        <td>{{addmovieCtrl.MovieData.title}}</td>
+                        <td>{{addmovieCtrl.MovieData.overview}} </td>
+                        <td>{{addmovieCtrl.MovieData.original_language}}</td>
+                        <td><p ng-repeat="g in addmovieCtrl.MovieData.genres">{{g.name}}</p></td>
+                        <td><p ng-repeat="c in addmovieCtrl.MovieData.production_companies">{{c.name}}</p></td>
+                        <td>{{addmovieCtrl.MovieData.runtime}} Min.</td>
+                    </tr>
+                </table>
+
+                <button ng-show="addmovieCtrl.MovieData!=''" class="btn btn-success" ng-click="addmovieCtrl.SaveMovie()">Add Movie</button>
+    
+            </div>
+        </div>
+
+        <h2>Added Movies</h2>
+
+        <div class="row">
+                <div class="col-md-8">
+                    <table class="table">
+                        <tr>
+                                <!-- <th>Poster</th> -->
+                                <th>Movie Name</th>
+                                <!-- <th>Synopsis</th> -->
+                                <th>Language</th>
+                                <th>Genre</th>
+                                <th>Companies</th>
+                                <th>Duration</th>
+                                <th></th>
+                        </tr>
+                        <tr ng-repeat="m in addmovieCtrl.Movies">
+                            <!-- <td><img src="http://image.tmdb.org/t/p/w500{{m.Poster}}" width="130" height="200"></td> -->
+                            <td>{{m.Title}}</td>
+                            <!-- <td>{{m.Synopsis}}</td> -->
+                            <td>{{m.Language}}</td>
+                            <td><p ng-repeat="g in m.Genre">{{g.name}}</p> </td>
+                            <td ><p ng-repeat="c in m.Companies">{{c.name}}</p> </td>
+                            <td>{{m.Duration}}</td>
+                            <td><button ng-click='addmovieCtrl.RemoveMovie(m)' class="bookm">Delete</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        
+       
+
+    </div>

@@ -1,0 +1,115 @@
+/* .pst {
+    position: relative;
+    float: left;
+    width:  400px;
+    height: 250px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:   cover;
+    margin: 20px;
+    border-radius: 5px;
+    display: block;
+  
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 20px;
+  
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 500px) {
+  .column {
+      width: 50%;
+  }
+}
+.poster{
+  border-radius: 5px;
+}
+.name{
+  color: white;
+}
+.book{
+  background: #e30914;
+  border: #e30914;
+  color: whitesmoke;
+  width: 100%;
+  border-radius: 5px;
+  height: 50px;
+  font-size: 15px;
+  font-family:Helvetica;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  
+}
+.bookm{
+  background: #e30914;
+  border: #e30914;
+  color: whitesmoke;
+  border-radius: 5px;
+  height: 40px;
+  font-family:Helvetica;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  
+}
+.book:hover{
+  background: #f70b16;
+}
+
+
+h1{
+  color: white;
+}
+
+div{
+  font-family: Gotham;
+}
+
+/* .thing-form {
+  margin: 0px;
+}
+
+ #banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #4393B9;
+}
+
+.navbar-text {
+  margin-left: 15px;
+} 
+ */

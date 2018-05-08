@@ -1,0 +1,47 @@
+.seat{
+    width: 30px;
+    height: 35px;
+    border-radius:20%;
+    background: whitesmoke;
+
+}
+
+div.seat:hover{
+    background:red;
+}
+
+.seatselected{
+    background:#e30914;
+}
+
+.seatbooked{
+    background:grey;
+}
+
+th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+.lay{
+    width: 100%;
+}
+
+.center {
+   
+    color: white;
+    font-size:15px;
+}
+
+.summary{
+    background-color: rgb(22, 22, 22);
+    border-radius: 5px;
+    padding: 10px;;
+}
+.title{
+    font-size: 25px;
+}
+.sub{
+    font-size: 17px;
+    color: rgb(179, 179, 179);
+}

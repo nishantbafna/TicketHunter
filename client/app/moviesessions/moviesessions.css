@@ -1,0 +1,46 @@
+.bg {
+    /* The image used */
+    /* Full height */
+    height: 250px; 
+    position: relative;
+    /* Center and scale the image nicely */
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 18px;
+    text-shadow: 1px 1px 10px black;
+}
+.showTimings{
+    background: rgb(29, 29, 29);
+    border: black;
+    color: whitesmoke;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    font-family:Helvetica;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-right: 10px;
+    margin: 10px;    
+  }
+
+  .dates{
+    background: rgb(29, 29, 29);
+    border: black;
+      font-size: 20px;
+      margin: 5px;
+      
+      
+  }
+
+  .dates:focus{
+      background: whitesmoke;
+  }
+
+  

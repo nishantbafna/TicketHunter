@@ -1,0 +1,170 @@
+<br><br>
+<div class="container" >
+
+    <div class="col-sm-2 ">  
+            <ul class="nav ">
+              <li class="active"><a href="#tab1" data-toggle="pill">Manage Theatres</a></li>
+              <li class=""><a href="#tab2" data-toggle="pill">Movie Mapping</a></li> 
+              <li class=""><a href="#tab3" data-toggle="pill">Remove Movie form Theatre</a></li>                           
+            </ul>
+    </div>
+
+    <!-- tab content -->
+    <div class="tab-content col-sm-10 back">
+    
+            <!-- tab 1 -->
+
+        <div class="tab-pane active text-style" id="tab1">
+                <h2>Manage Theatres</h2>
+                <div class="form-group">
+                        <h2><small>Add Theatre</small></h2>
+                        <input type="text" placeholder="Theatre Name" ng-model="manageCtrl.TheatreName" class="form-control">
+                </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Location" ng-model="manageCtrl.Location" class="form-control">
+                    </div>
+                    <div class="form-group">
+                            <input type="text" placeholder="City" ng-model="manageCtrl.City" class="form-control">
+                     </div>
+                    <div class="form-group ">
+                        <button class=" AddTime book" >ADD</button>
+                    </div>
+
+                    <table class="table">
+                            <h2><small> Theatres </small></h2>
+                            <tr>
+                                    <th>Theatre Name</th>
+                                    <th>Location</th>
+                                    <th>City</th>
+                                    <th></th>
+                            </tr>
+                            <tr ng-repeat="m in manageCtrl.Theatre">
+                                <td>{{m.TheatreName}}</td>
+                                <td>{{m.Location}}</td>
+                                <td>{{m.City}}</td>
+                                <td><button ng-click='manageCtrl.RemoveTheatre(m)' class="bookm">DELETE</button></td>
+                            </tr>
+                     </table>
+        </div>
+
+        <!-- TAB 2 -->
+    
+        <div class="tab-pane text-style" id="tab2">
+                <h2>Manage Movie Mapping</h2>
+
+                <div class="form-group">                   
+                        <h3><small>MOVIE</small></h3>
+                        <select class="custom-select form-control" ng-model="manageCtrl.MovieName"  id="inputGroupSelect01">
+                                <option ng-repeat="m in manageCtrl.Movies">{{m.Title}}</option>
+                        </select>
+                </div>
+
+                <div class="form-group">                    
+                        <h3><small>CITY</small></h3>
+                        <select class="custom-select form-control" ng-model="manageCtrl.City" >
+                                <option ng-repeat="m in manageCtrl.Theatre" >{{m.City}}</option>
+                        </select>
+                </div>
+
+                <button class="btn btn-success" ng-click="manageCtrl.SearchTheatreName()">SEARCH THEATRES</button>
+
+
+
+                <div class="form-group">        
+                        <h3><small>AVAILABLE THEATRES (use Cmd/Ctrl to select multiple theatres)</small></h3>
+
+                        <select class="custom-select form-control selectpicker" multiple ng-model="manageCtrl.SelectedTheatres">
+                                <option ng-repeat="m in manageCtrl.CustomTheatre">{{m.TheatreName}} {{m.Location}}</option>
+                        </select>
+                        <!-- <button ng-click="manageCtrl.Haha()"></button> -->
+                </div>
+
+                <div class="form-group">
+                        <h3><small>ADD DATE</small></h3>
+                        <select class="custom-select" ng-model="manageCtrl.date" >
+                                        <option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option>
+                        </select>
+                        &nbsp;
+                        <select class="custom-select" ng-model="manageCtrl.month" >
+                                <option>JAN</option><option>FEB</option><option>MAR</option><option>APR</option><option>MAY</option><option>JUN</option><option>JUL</option><option>AUG</option><option>SEP</option><option>OCT</option><option>NOV</option><option>DEC</option>
+                        </select>
+                        <button class="btn-success btn" ng-click="manageCtrl.AddDate()">Add</button>
+
+                        <h5><span ng-repeat="m in manageCtrl.ShowDates">{{m}} &nbsp; </span></h5>
+                </div>
+
+               
+               
+                
+                <p class="input-group">        
+                        <h3 class><small>SHOWTIMES</small></h3>
+                        <select class="custom-select" ng-model="manageCtrl.hour" >
+                                <option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option>
+                        </select>
+                        :
+                        <select class="custom-select" ng-model="manageCtrl.minute" >
+                                        <option>00</option><option>05</option><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option>35</option><option>40</option><option>45</option><option>50</option><option>55</option>
+                        </select>
+                        &nbsp;
+                        <select class="custom-select" ng-model="manageCtrl.ampm" >
+                                        <option>AM</option><option>PM</option>
+                                </select>
+                        <span class="btn">
+                                <button type="submit" class="btn btn-success" ng-click="manageCtrl.addTime()" id="addTime" >Add</button>
+                        </span>
+
+                        <h5><span ng-repeat="m in manageCtrl.ShowTiminigs">{{m}} &nbsp; </span></h5>
+                        
+                </p>
+
+                
+
+                <!-- <div class="form-group">
+                        <h3><small>Show Timings</small></h3>
+                        <select class="custom-select selectpicker" ng-model="manageCtrl.Hour">
+                            <option>HH</option>
+                            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option>
+                        </select>  
+                        <select class="custom-select selectpicker" ng-model="manageCtrl.Minute">
+                                <option>MM</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option>
+                        </select>
+                        <select class="custom-select selectpicker" ng-model="manageCtrl.AMPM">
+                                    <option>AM</option>
+                                    <option>PM</option>
+                        </select> 
+                        <button class="btn-success btn" ng-click="manageCtrl.ShowTime()">Add</button>
+                         
+                </div> -->
+
+                <button class="btn btn-success form-control" ng-click="manageCtrl.SaveMapping()">Save Mapping Details</button>
+                
+                <br><br>
+                
+               
+        </div>
+
+           <!-- tab 3 -->
+
+           <div class="tab-pane text-style" id="tab3">
+                        <h2>Remove Movie</h2>
+                        
+                            <table class="table">
+                                    <h2><small> All Mapped Movies </small></h2>
+                                    <tr>
+                                            <th>Movie Name</th>
+                                            <th>City Name</th>
+                                            <th></th>
+                                    </tr>
+                                    <tr ng-repeat="m in manageCtrl.MappedMovies">
+                                        <td>{{m.MovieName}}</td>
+                                        <td>{{m.CityName}}</td>
+                                        <td><button ng-click='manageCtrl.RemoveMappedMovie(m)' class="btn bookm">DELETE</button></td>
+                                    </tr>
+                             </table>
+                </div>
+   
+    </div>
+        
+        
+</div>

@@ -1,0 +1,160 @@
+
+<div ng-repeat="m in bookingCtrl.MovieData"> 
+        <div class="bg" style="background-image: url('http://image.tmdb.org/t/p/w500{{m.Poster}}');"></div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <table class="lay">
+               
+                <br>
+                <tr>
+                    <td>
+                        <div id="A1" class="seat"></div>
+                    </td>
+                    <td>
+                        <div id="A2" class="seat"></div>
+                    </td>
+                    <td>
+                        <div id="A3" class="seat"></div>
+                    </td>
+                    <td>
+                        <div id="A4" class="seat"></div>
+                    </td>
+                    <td>
+                        <div id="A5" class="seat"></div>
+                    </td>
+                    <td>
+                        <div id="A6" class="seat"></div>
+                    </td>
+                    <td>
+                        <div id="A7" class="seat"></div>
+                    </td>
+                    <td>
+                        <div id="A8" class="seat"></div>
+                    </td>
+                    <td>
+                        <div id="A9" class="seat"></div>
+                    </td>
+                    <td>
+                        <div id="A10" class="seat"></div>
+                    </td>
+                </tr>
+                
+                <tr>
+                        <td>
+                            <div id="B1" class="seat"></div>
+                        </td>
+                        <td>
+                            <div id="B2" class="seat"></div>
+                        </td>
+                        <td>
+                            <div id="B3" class="seat"></div>
+                        </td>
+                        <td>
+                            <div id="B4" class="seat"></div>
+                        </td>
+                        <td>
+                            <div id="B5" class="seat"></div>
+                        </td>
+                        <td>
+                            <div id="B6" class="seat"></div>
+                        </td>
+                        <td>
+                            <div id="B7" class="seat"></div>
+                        </td>
+                        <td>
+                            <div id="B8" class="seat"></div>
+                        </td>
+                        <td>
+                            <div id="B9" class="seat"></div>
+                        </td>
+                        <td>
+                            <div id="B10" class="seat"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+                                <div id="C1" class="seat"></div>
+                            </td>
+                            <td>
+                                <div id="C2" class="seat"></div>
+                            </td>
+                            <td>
+                                <div id="C3" class="seat"></div>
+                            </td>
+                            <td>
+                                <div id="C4" class="seat"></div>
+                            </td>
+                            <td>
+                                <div id="C5" class="seat"></div>
+                            </td>
+                            <td>
+                                <div id="C6" class="seat"></div>
+                            </td>
+                            <td>
+                                <div id="C7" class="seat"></div>
+                            </td>
+                            <td>
+                                <div id="C8" class="seat"></div>
+                            </td>
+                            <td>
+                                <div id="C9" class="seat"></div>
+                            </td>
+                            <td>
+                                <div id="C10" class="seat"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <div id="D1" class="seat"></div>
+                                </td>
+                                <td>
+                                    <div id="D2" class="seat"></div>
+                                </td>
+                                <td>
+                                    <div id="D3" class="seat"></div>
+                                </td>
+                                <td>
+                                    <div id="D4" class="seat"></div>
+                                </td>
+                                <td>
+                                    <div id="D5" class="seat"></div>
+                                </td>
+                                <td>
+                                    <div id="D6" class="seat"></div>
+                                </td>
+                                <td>
+                                    <div id="D7" class="seat"></div>
+                                </td>
+                                <td>
+                                    <div id="D8" class="seat"></div>
+                                </td>
+                                <td>
+                                    <div id="D9" class="seat"></div>
+                                </td>
+                                <td>
+                                    <div id="D10" class="seat"></div>
+                                </td>
+                            </tr>
+            </table>
+
+        <br>
+        </div>
+
+        <div class="col-md-4"  style="color: white;" >
+        <div class="summary">
+            <span class="title">{{bookingCtrl.MovieName}}</span><br>
+            <span class="sub">{{bookingCtrl.SelectedTheatre}}</span>
+            <span class="sub">{{bookingCtrl.City}}</span><br>
+            <span class="sub">{{bookingCtrl.SelectedTime}}</span>
+            <br><br>
+            <span class="sub">SEAT INFO</span> <br>
+            <span id='seatNumbers'></span>
+            <h3>TOTAL(INR)  &nbsp;<b><span id='total'></span></b></h3>
+            <button class="book" ng-click="bookingCtrl.SaveBooking()" onclick="location.href='/payment';">CONTINUE</button>
+        </div>
+        </div>
+    </div>
+</div>
